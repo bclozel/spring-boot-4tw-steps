@@ -1,15 +1,20 @@
 package demo.config.model;
 
+import com.fasterxml.jackson.annotation.JsonView;
 import demo.config.diff.ConfigDiffType;
 
 public class ConfigurationPropertyDiff {
 
+	@JsonView(DiffView.Summary.class)
 	private String id;
 
+	@JsonView(DiffView.Summary.class)
 	private ConfigDiffType diffType;
 
+	@JsonView(DiffView.Summary.class)
 	private ConfigurationMetadata from;
 
+	@JsonView(DiffView.Summary.class)
 	private ConfigurationMetadata to;
 
 	public String getId() {

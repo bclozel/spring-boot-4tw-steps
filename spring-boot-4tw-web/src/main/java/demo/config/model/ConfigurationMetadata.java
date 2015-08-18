@@ -3,27 +3,35 @@ package demo.config.model;
 import java.util.ArrayList;
 import java.util.List;
 
+import com.fasterxml.jackson.annotation.JsonView;
+
 import org.springframework.boot.configurationmetadata.ValueHint;
 import org.springframework.boot.configurationmetadata.ValueProvider;
 
 public class ConfigurationMetadata {
 
+	@JsonView(DiffView.Summary.class)
 	private String id;
 
+	@JsonView(DiffView.Summary.class)
 	private String name;
 
 	private String type;
 
 	private String description = "";
 
+	@JsonView(DiffView.Summary.class)
 	private String shortDescription = "";
 
 	private Object defaultValue;
 
+	@JsonView(DiffView.Summary.class)
 	private boolean deprecated = false;
 
+	@JsonView(DiffView.Summary.class)
 	private String deprecationReason = "";
 
+	@JsonView(DiffView.Summary.class)
 	private String deprecationReplacement = "";
 
 	private final List<ValueHint> valueHints = new ArrayList();
